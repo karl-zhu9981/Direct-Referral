@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet" />
+    <link rel="icon" href="images/icon.ico" />
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="/__/firebase/7.17.1/firebase-app.js"></script>
+    <!-- Add the entire Firebase JavaScript SDK -->
+    <script src="/__/firebase/7.17.1/firebase.js"></script>
+    <!-- Initialize Firebase -->
+    <script src="/__/firebase/init.js"></script>
+
+    <script type="text/javascript">// Initialize Firebase with a "default" Firebase project
+        var defaultProject = firebase.initializeApp(firebaseConfig);
+        console.log(defaultProject.name);  // "[DEFAULT]"
+        // Option 1: Access Firebase services via the defaultProject variable
+        var defaultStorage = defaultProject.storage();
+        var defaultFirestore = defaultProject.firestore();
+    </script>
+
+    <title>Direct Referral</title>
+</head>
+
+<body style="background-color: #21145F;">
+    <nav>
+        <div class="logo">
+            <img src="images/dom-logo.png" width="300" />
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+        <div class="menu">
+            <div class="1"></div>
+            <div class="2"></div>
+            <div class="3"></div>
+            <div class="4"></div>
+        </div>
+    </nav>
+
+    <div class="header">
+        <h1 style="color: aliceblue;">Direct Referral</h1>
+    </div>
+
+    <section class="index">
+        <script src="application.js"></script>
+        <script src="app.js"></script>
+
+        <div class="tab">
+            <button class="tablinks" onclick="openDiag(event, 'DVT')" id="defaultOpen">Deep Vein Thrombosis</button>
+            <button class="tablinks" onclick="openDiag(event, 'COVID-19')">COVID-19</button>
+            
+        </div>
+        
+        <!-- Tab content -->
+        <div id="DVT" class="tabcontent">
+            <h3>Deep Vein Thrombosis</h3><br>
+
+            <section>
+                <p>Previous DVT</p>
+                <div class="toggleswitch" >
+                    <input type="checkbox" onclick="adjust_score(this,1)" class="toggleswitch-checkbox" id="DVTq1" tabindex="0">
+                    <label class="toggleswitch-label" for="DVTq1">
+                        <span class="toggleswitch-inner"></span>
+                        <span class="toggleswitch-switch"></span>
+                    </label>
+                </section>
+            
+              <br>
+  
+              <section>
+                <p>Paralysis, paresis or recent plaster immobilization of the legs</p>
+                <div class="toggleswitch">
+                    <input type="checkbox" onclick="adjust_score(this,1)" class="toggleswitch-checkbox" id="DVTq2" tabindex="0">
+                    <label class="toggleswitch-label" for="DVTq2">
+                        <span class="toggleswitch-inner"></span>
+                        <span class="toggleswitch-switch"></span>
+                    </label>
+                </section>
+  
+              
+              <br>
+  
+              <section>
+                <p>Bedridden > 3 days or major surgery within 4 weeks</p>
+                <div class="toggleswitch">
+                    <input type="checkbox" onclick="adjust_score(this,1)" class="toggleswitch-checkbox" id="DVTq3" tabindex="0">
+                    <label class="toggleswitch-label" for="DVTq3">
+                        <span class="toggleswitch-inner"></span>
+                        <span class="toggleswitch-switch"></span>
+                    </label>
+                </section>
+  
+              <br>
+  
+              <section>
+                <p>Active cancer (treatment ongoing or within 6 months or palliative)</p>
+                <div class="toggleswitch">
+                    <input type="checkbox" onclick="adjust_score(this,1)" class="toggleswitch-checkbox" id="DVTq4" tabindex="0">
+                    <label class="toggleswitch-label" for="DVTq4">
+                        <span class="toggleswitch-inner"></span>
+                        <span class="toggleswitch-switch"></span>
+                    </label>
+                </section>
+              
+              <br>
+  
+              <section>
+                <p>Tenderness along the distribution of the deep veins</p>
+                <div class="toggleswitch">
+                    <input type="checkbox" onclick="adjust_score(this,1)" class="toggleswitch-checkbox" id="DVTq5" tabindex="0">
+                    <label class="toggleswitch-label" for="DVTq5">
+                        <span class="toggleswitch-inner"></span>
+                        <span class="toggleswitch-switch"></span>
+                    </label>
+                </section>
+  
+              <br>
+  
+              <section>
+                <p>Calf swelling 3 cm more than asymptomatic leg (measured 10 cm below the tibial tuberosity)</p>
+                <div class="toggleswitch">
+                    <input type="checkbox" onclick="adjust_score(this,1)" class="toggleswitch-checkbox" id="DVTq6" tabindex="0">
+                    <label class="toggleswitch-label" for="DVTq6">
+                        <span class="toggleswitch-inner"></span>
+                        <span class="toggleswitch-switch"></span>
+                    </label>
+                </section>
+           
+              <br>
+  
+              <section>
+                <p>Pitting edema greater in the symptomatic leg</p>
+                <div class="toggleswitch">
+                    <input type="checkbox" onclick="adjust_score(this,1)" class="toggleswitch-checkbox" id="DVTq7" tabindex="0">
+                    <label class="toggleswitch-label" for="DVTq7">
+                        <span class="toggleswitch-inner"></span>
+                        <span class="toggleswitch-switch"></span>
+                    </label>
+                </section>
+  
+              <br>
+  
+              <section>
+                <p>Collateral superficial non varicose veins</p>
+                <div class="toggleswitch">
+                    <input type="checkbox" onclick="adjust_score(this,1)" class="toggleswitch-checkbox" id="DVTq8" tabindex="0">
+                    <label class="toggleswitch-label" for="DVTq8">
+                        <span class="toggleswitch-inner"></span>
+                        <span class="toggleswitch-switch"></span>
+                    </label>
+                </section>
+  
+              <br>
+              
+              <section>
+                <p>Entire leg swollen</p>
+                <div class="toggleswitch">
+                    <input type="checkbox" onclick="adjust_score(this,1)" class="toggleswitch-checkbox" id="DVTq9" tabindex="0">
+                    <label class="toggleswitch-label" for="DVTq9">
+                        <span class="toggleswitch-inner"></span>
+                        <span class="toggleswitch-switch"></span>
+                    </label>
+                </section>
+  
+              <br>
+  
+              <section>
+                <p>Alternative diagnosis at least as likely as DVT (e.g. cellulitis, Baker’s cyst, MSK injury)</p>
+                <div class="toggleswitch">
+                    <input type="checkbox" onclick="adjust_score(this,-2)" class="toggleswitch-checkbox" id="DVTq10" tabindex="0">
+                    <label class="toggleswitch-label" for="DVTq10">
+                        <span class="toggleswitch-inner2"></span>
+                        <span class="toggleswitch-switch"></span>
+                    </label>
+                </section>
+  
+              <br>
+  
+              <section>
+                <h3 id="total">Score: 0</h3>
+                <h3 id="prob_text">DVT Unlikely</h3>
+              </section>
+            
+              <script>
+                let score = 0 
+                function adjust_score(toggle_box, number) {
+                    if ($(toggle_box).is(":checked")){
+                        console.log("asdfasdf")
+                        let new_score = score + number
+                        //let score_sctring = 
+                        document.getElementById("total").innerHTML = "Score: ".concat(new_score)
+                        score = new_score
+        
+                        if (score >= 2) {
+                            document.getElementById("prob_text").innerHTML = "DVT Likely"
+                        } else {
+                            document.getElementById("prob_text").innerHTML = "DVT Unlikely"
+                        }
+        
+                    } else {
+                        let new_score = score - number
+                        //let score_sctring = 
+                        document.getElementById("total").innerHTML = "Score: ".concat(new_score)
+                        score = new_score
+        
+                        if (score >= 2) {
+                            document.getElementById("prob_text").innerHTML = "DVT Likely"
+                        } else {
+                            document.getElementById("prob_text").innerHTML = "DVT Unlikely"
+                        }
+        
+                    }
+  
+                }
+  
+              </script>
+              <br>   
+            
+        </div>
+        
+        <div id="COVID-19" class="tabcontent">
+            <h3>COVID-19</h3><br>
+
+            <section>
+                <p>Test Question</p>
+                <div class="toggleswitch" >
+                    <input type="checkbox" onclick="adjust_score(this,1)" class="toggleswitch-checkbox" id="CO-19q1" tabindex="0">
+                    <label class="toggleswitch-label" for="CO-19q1">
+                        <span class="toggleswitch-inner"></span>
+                        <span class="toggleswitch-switch"></span>
+                    </label>
+                </section>
+
+        </div>
+        <script>
+            // Get the element with id="defaultOpen" and click on it
+            document.getElementById("defaultOpen").click();
+        </script>
+    </section>
+    
+</body>
+
+<footer>
+    <h3> 2020 </h3>
+</footer>
+
+</html>
